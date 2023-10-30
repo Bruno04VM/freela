@@ -1,0 +1,212 @@
+//HEADER
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+body{
+  font-family: 'Sora', sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  background-color: #040404;
+}
+
+button{
+    font-family: 'Sora', sans-serif;
+    cursor: pointer;
+}
+svg{
+    width: 100%;
+}
+img{
+    width: 100%;
+}
+a{ 
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+}
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+i{
+    color: #b8904b;
+}
+.header-icons{
+    display: flex;
+    gap: 20px;
+}
+.header-icons a:hover{
+    i{
+        animation: translateY 0.8s infinite alternate;
+        color: #c28824;
+    }
+}
+@keyframes translateY {
+    from{
+        transform: translateY(0) scale(1);
+    }
+    to{
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+.header-button{
+    border: 1px solid #b8904b;
+    padding: 8px 10px;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    background-color: #b8904b;
+    transition: background-color 0.8s;
+}
+.header-button:hover{
+    border: 1px solid #c28824;
+    background-color: #c28824;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -25px;
+    width: 280px;
+}
+
+@media screen and (max-width:768px){
+
+    .header-content{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    i{
+        margin-top: 16px;
+        font-size: 34px;
+
+    }
+
+    .header-logo img{
+        width: 250px;
+        margin-top: 46px;
+
+    }
+
+    .header-button{
+        display: none;
+    }
+}
+
+//LAYOUT
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+//bg-home
+
+.bg-home{
+    position: relative;
+}
+.bg-home::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, #040404ce, rgb(0, 0, 0)), url("acess-work.jpg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 1.9;
+}
+
+//--------------------------------------------------
+
+//-----HERO-------------------------------------------
+
+.hero{
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+
+    h1{
+        text-align: center;
+        line-height: 150%;
+        max-width: 940px;
+        font-size: 48px;
+    }
+    p{
+        text-align: center;
+        margin: 14px 0;
+    }
+}
+
+    .button-contact{
+        padding: 14px 28px;
+        color: black;
+        background-color: #b8904b;
+        border: 0;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 14px 0;
+    }
+    .button-contact:hover{
+        animation: scalebutton 0.8s alternate infinite;
+        background-color: #c28824;
+    }
+
+    @keyframes scalebutton {
+        from{
+          transform: scale(1);
+        }
+        to{
+            transform: scale(1.07)
+        }
+    }
+    @media screen and (max-width: 786px){
+        .hero{
+            min-height: 60vh;
+
+            h1{
+                font-size: 34px;
+                padding: 0 14px;
+                width: 100%;
+            }
+
+            p{
+                font-size: 14px;
+
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px){
+        .hero h1{
+            font-size: 24px;
+        }
+
+        .hero p{
+            font-size: 12px;
+        }
+    }

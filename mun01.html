@@ -1,0 +1,132 @@
+
+<!--MUDAR PRA PHP PARA ATIVAR, E PARA HMTL PARA EDITAR-->
+
+<?php
+
+     if(isset($_POST['submit']))
+     {
+
+        include_once('form-pesquisa.php');
+
+        $data_nascimento = $_POST['data_nascimento'];
+        $genero =  $_POST['genero'];
+        $prefeito = $_POST['prefeito'];
+        $verador = $_POST['vereador'];
+
+        $result = mysqli_query($conexao, "INSERT INTO mun01(data_nasc,sexo,prefeito,vereador) VALUES('$data_nascimento','$genero','$prefeito','$verador')");
+
+        header("Location: index-last.html");
+        exit();
+     }
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Work+Sans&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="mun01.css" />
+
+
+    <title>Pesquisa Eleitoral | Prime Acessoría</title>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="bg-home">
+        <header>
+        
+            <nav class="header-content container">
+        
+                <div class="header-icons">
+                    <a href="#"> 
+                       <i class="fa-brands fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="#"> 
+                        <i class="fa-brands fa-facebook fa-2x"></i>
+                     </a>
+                     <a href="#"> 
+                        <i class="fa-brands fa-tiktok fa-2x"></i>
+                     </a>
+                 </div>
+                 <div class="header-logo">
+                    <img 
+                    src="pr1m3-preview.png" 
+                    alt="Logo da Prime"
+                    />
+                 </div>
+                 <div>
+                    <a class="header-button" href="index-towns.html">
+                   <b>RETORNAR</b>
+                    </a>
+                 </div>
+        
+            </nav>
+        
+
+    <div class="box content">
+        <form action="mun01.php" method="POST" id="form" class="form">
+            <section class="header-form">
+                <h2>PESQUISA ELEITORAL</h2>
+            </section>
+                <br>
+
+                
+              <div class="form-content">
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+
+              <br>
+
+              <div class="sex">
+                <p><b>Sexo:</b></p>
+
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                    <label for="masculino"><b>Masculino</b></label>
+
+                    <input type="radio" id="feminino" name="genero" value="feminino" required>
+                        <label for="feminino"><b>Feminino</b></label>
+
+                        <input type="radio" id="outro" name="genero" value="outro" required>
+                            <label for="outro"><b>Outro</b></label>
+                        </div>
+                
+                            <br><br>
+
+                         <label for="prefeito"><b>Prefeito:</b></label>
+                         <select name="prefeito" id="prefeito">
+                         <option value="1">Prefeito 1</option>
+                          <option value="2">Prefeito 2</option>
+                         <option value="3">Prefeito 3</option>
+                         </select>
+
+                        <br><br>
+
+                         <label for="vereador"><b>Vereador:</b></label>
+                         <select name="vereador" id="vereador">
+                          <option value="1">Vereador 1</option>
+                         <option value="2">Vereador 2</option>
+                          <option value="3">Vereador 3</option>
+                         </select>
+
+                          <br><br>
+
+              </div>
+
+              <div class="sub">
+                <input type="submit" name="submit" id="submit">
+            </div>        
+        </form>
+    </div>
+</body>
+</html>

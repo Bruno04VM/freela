@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #040404;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.sub {
+  font-family: "Sora", sans-serif;
+  cursor: pointer;
+}
+
+svg {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+i {
+  color: #b8904b;
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.header-icons a:hover i {
+  animation: translateY 0.8s infinite alternate;
+  color: #c28824;
+}
+
+@keyframes translateY {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+.header-button {
+  border: 1px solid #b8904b;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  background-color: #b8904b;
+  transition: background-color 0.8s;
+}
+
+.header-button:hover {
+  border: 1px solid #c28824;
+  background-color: #c28824;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25px;
+  width: 280px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-content {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  i {
+    margin-top: 16px;
+    font-size: 34px;
+  }
+  .header-logo img {
+    width: 250px;
+    margin-top: 46px;
+  }
+  .header-icons {
+    display: none;
+  }
+  .header-button {
+    display: none;
+  }
+  .box {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .box label {
+    font-size: 16px;
+  }
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.bg-home {
+  position: relative;
+}
+
+.bg-home::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to bottom, #040404, rgba(0, 0, 0, 0.986)), url("acess-work.jpg");
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  opacity: 1.9;
+}
+
+.box {
+  background-color: #b8904b;
+  border-radius: 14px;
+  margin: 14px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: 0 3px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-form {
+  background: linear-gradient(120deg, #fafafa 0%, #fff 100%);
+  padding: 24px;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+}
+
+.form {
+  padding: 18px;
+}
+
+.form-content {
+  margin-bottom: 8px;
+  padding-bottom: 18px;
+  position: relative;
+}
+
+.form-content label {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.form-content input {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  border: 2px solid #c28824;
+}
+
+.sex {
+  display: flex;
+}
+
+#submit:hover {
+  animation: scaleinput 0.8s alternate infinite;
+  background-color: #fff;
+}
+
+#submit {
+  background-image: linear-gradient(to right, white, rgb(255, 255, 255));
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}/*# sourceMappingURL=mun02.css.map */
